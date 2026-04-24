@@ -1,10 +1,10 @@
 # Stage 1: Build frontend
 FROM node:22-alpine AS frontend-build
 WORKDIR /app/frontend
-COPY frontend/package.json frontend/package-lock.json ./
-RUN npm ci
+RUN npm install -g pnpm
 COPY frontend/ ./
-RUN npm run build
+RUN pnpm install
+RUN pnpm run build
 
 # Stage 2: Runtime
 FROM python:3.12-slim

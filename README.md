@@ -31,7 +31,7 @@ The app will be available at **http://localhost:8000**.
 
 - Python 3.12+
 - Node.js 20+
-- npm
+- pnpm
 
 ### Backend
 
@@ -66,10 +66,10 @@ The API runs at **http://localhost:8000**. Interactive docs are at `/docs`.
 cd frontend
 
 # Install dependencies
-npm install
+pnpm install
 
 # Start the dev server
-npm run dev
+pnpm run dev
 ```
 
 The frontend runs at **http://localhost:5173** and proxies `/api` requests to the backend at port 8000.
@@ -78,7 +78,7 @@ The frontend runs at **http://localhost:5173** and proxies `/api` requests to th
 
 ```bash
 cd frontend
-npm run build
+pnpm run build
 ```
 
 The production build outputs to `frontend/dist/`.
