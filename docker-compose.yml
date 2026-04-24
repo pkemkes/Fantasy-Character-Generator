@@ -1,0 +1,17 @@
+services:
+  fantasy-character-generator:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGCHAIN_TRACING_V2=true
+      - DAILY_IMAGE_LIMIT=30
+      - BASE_URL=http://localhost:8000
+    volumes:
+      - character-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  character-data:
