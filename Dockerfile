@@ -1,5 +1,6 @@
 # Stage 1: Build frontend
 FROM node:22-alpine AS frontend-build
+ENV CI=true
 WORKDIR /app/frontend
 RUN npm install -g pnpm
 COPY frontend/ ./
